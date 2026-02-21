@@ -8,34 +8,40 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
     background: #fff8f5;
     text-align: center;
+    overflow-x: hidden;
 }
 
 header {
-    background: #d4a5a5;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('fotos/foto1.jpeg') center/cover no-repeat;
     color: white;
-    padding: 40px 20px;
+    padding: 120px 20px;
 }
 
 h1 {
+    font-size: 48px;
     margin: 0;
-    font-size: 40px;
-}
-
-h2 {
-    margin-top: 10px;
-    font-weight: normal;
-}
-
-.contador {
-    font-size: 24px;
-    margin-top: 15px;
 }
 
 section {
-    padding: 40px 20px;
+    padding: 50px 20px;
+}
+
+button {
+    background: #b5838d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a06c75;
 }
 
 .galeria {
@@ -49,8 +55,7 @@ section {
 .galeria img {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: transform 0.4s;
 }
 
 .galeria img:hover {
@@ -58,59 +63,91 @@ section {
 }
 
 footer {
-    background: #d4a5a5;
+    background: #b5838d;
     color: white;
     padding: 20px;
+}
+
+/* PETALAS */
+.petala {
+    position: fixed;
+    top: -10px;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: cair linear infinite;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 Música -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f0a3d1e3.mp3?filename=wedding-piano-110624.mp3" type="audio/mpeg">
+</audio>
+
 <header>
-    <h1>Daniel & Sara 💍</h1>
-    <h2>Nosso grande dia</h2>
-    <div class="contador" id="contador"></div>
+<h1>Daniel & Sara 💍</h1>
+<p>15 de Maio de 2027 • Magé/RJ</p>
 </header>
 
 <section>
-    <h2>📸 Nossa História</h2>
-    <div class="galeria">
-        <img src="fotos/foto1.jpeg">
-        <img src="fotos/foto2.jpeg">
-        <img src="fotos/foto3.jpeg">
-        <img src="fotos/foto4.jpeg">
-        <img src="fotos/foto5.jpeg">
-        <img src="fotos/foto6.jpeg">
-        <img src="fotos/foto7.jpeg">
-    </div>
+<h2>📸 Nossos Momentos</h2>
+<div class="galeria">
+<img src="fotos/foto1.jpeg">
+<img src="fotos/foto2.jpeg">
+<img src="fotos/foto3.jpeg">
+<img src="fotos/foto4.jpeg">
+<img src="fotos/foto5.jpeg">
+<img src="fotos/foto6.jpeg">
+<img src="fotos/foto7.jpeg">
+</div>
+</section>
+
+<section>
+<h2>💌 Confirmação de Presença</h2>
+<p>Confirme sua presença clicando abaixo:</p>
+<a href="COLE_AQUI_SEU_LINK_DO_GOOGLE_FORMS" target="_blank">
+<button>Confirmar Presença</button>
+</a>
+</section>
+
+<section>
+<h2>🎁 Lista de Presentes</h2>
+<p>Chave Pix:</p>
+<strong>daniel16leal@gmail.com</strong>
 </section>
 
 <footer>
-    Feito com ❤️ para o nosso casamento
+Com amor, Daniel & Sara ❤️
 </footer>
 
 <script>
-// ALTERE A DATA AQUI
-const dataCasamento = new Date("2026-12-20T18:00:00").getTime();
+// 🌸 Gerar pétalas
+function criarPetala() {
+    const petala = document.createElement("div");
+    petala.classList.add("petala");
 
-const contador = document.getElementById("contador");
+    petala.style.left = Math.random() * 100 + "vw";
+    petala.style.animationDuration = (Math.random() * 5 + 5) + "s";
 
-setInterval(function() {
-    const agora = new Date().getTime();
-    const distancia = dataCasamento - agora;
+    document.body.appendChild(petala);
 
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+    setTimeout(() => {
+        petala.remove();
+    }, 10000);
+}
 
-    contador.innerHTML = `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-
-    if (distancia < 0) {
-        contador.innerHTML = "💍 É hoje!";
-    }
-}, 1000);
+setInterval(criarPetala, 500);
 </script>
 
 </body>
