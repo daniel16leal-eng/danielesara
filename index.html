@@ -3,90 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel & Sara | Nosso Casamento</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<title>Daniel & Sara 💍</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f8f5f0;
-    color: #4a3f35;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #fff8f5;
+    text-align: center;
 }
 
 header {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('fotos/foto1.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background: #d4a5a5;
     color: white;
+    padding: 40px 20px;
 }
 
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
+h1 {
+    margin: 0;
+    font-size: 40px;
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.info {
-    text-align: center;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.pix-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-button {
-    background: #8c6f4e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
     margin-top: 10px;
-    border-radius: 6px;
-    cursor: pointer;
+    font-weight: normal;
 }
 
-button:hover {
-    background: #6e553b;
+.contador {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+section {
+    padding: 40px 20px;
 }
 
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .galeria img {
     width: 100%;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.4s;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
 .galeria img:hover {
@@ -94,38 +58,9 @@ button:hover {
 }
 
 footer {
-    text-align: center;
+    background: #d4a5a5;
+    color: white;
     padding: 20px;
-    background: #4a3f35;
-    color: white;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 50px;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-}
-
-.modal img {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 12px;
-}
-
-.modal span {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
 }
 </style>
 </head>
@@ -133,67 +68,49 @@ footer {
 <body>
 
 <header>
-<div>
-<h1>Daniel & Sara</h1>
-<p>15 de Maio de 2027 • Magé/RJ</p>
-</div>
+    <h1>Daniel & Sara 💍</h1>
+    <h2>Nosso grande dia</h2>
+    <div class="contador" id="contador"></div>
 </header>
 
 <section>
-<h2>Nosso Grande Dia</h2>
-<div class="info">
-<p>Com alegria convidamos você para celebrar conosco este momento único.</p>
-<p><strong>Data:</strong> 15/05/2027</p>
-<p><strong>Cidade:</strong> Magé/RJ</p>
-</div>
-</section>
-
-<section>
-<h2>Nossos Momentos</h2>
-<div class="galeria">
-<img src="fotos/foto1.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto2.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto3.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto4.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto5.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto6.jpg" onclick="abrirModal(this)">
-<img src="fotos/foto7.jpg" onclick="abrirModal(this)">
-</div>
-</section>
-
-<section>
-<h2>Lista de Presentes</h2>
-<div class="pix-box">
-<p>Se desejar nos presentear, utilize nossa chave Pix:</p>
-<strong id="pix">daniel16leal@gmail.com</strong><br>
-<button onclick="copiarPix()">Copiar chave Pix</button>
-</div>
+    <h2>📸 Nossa História</h2>
+    <div class="galeria">
+        <img src="fotos/foto1.jpeg">
+        <img src="fotos/foto2.jpeg">
+        <img src="fotos/foto3.jpeg">
+        <img src="fotos/foto4.jpeg">
+        <img src="fotos/foto5.jpeg">
+        <img src="fotos/foto6.jpeg">
+        <img src="fotos/foto7.jpeg">
+    </div>
 </section>
 
 <footer>
-Com amor, Daniel & Sara 💍
+    Feito com ❤️ para o nosso casamento
 </footer>
 
-<div id="meuModal" class="modal">
-<span onclick="fecharModal()">&times;</span>
-<img id="imgModal">
-</div>
-
 <script>
-function copiarPix() {
-    const texto = document.getElementById("pix").innerText;
-    navigator.clipboard.writeText(texto);
-    alert("Chave Pix copiada!");
-}
+// ALTERE A DATA AQUI
+const dataCasamento = new Date("2026-12-20T18:00:00").getTime();
 
-function abrirModal(img) {
-    document.getElementById("meuModal").style.display = "block";
-    document.getElementById("imgModal").src = img.src;
-}
+const contador = document.getElementById("contador");
 
-function fecharModal() {
-    document.getElementById("meuModal").style.display = "none";
-}
+setInterval(function() {
+    const agora = new Date().getTime();
+    const distancia = dataCasamento - agora;
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    contador.innerHTML = `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+
+    if (distancia < 0) {
+        contador.innerHTML = "💍 É hoje!";
+    }
+}, 1000);
 </script>
 
 </body>
