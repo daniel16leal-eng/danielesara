@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
 body{
 margin:0;
 font-family:'Montserrat',sans-serif;
@@ -59,7 +60,7 @@ font-size:22px;
 }
 
 section{
-padding:50px 20px;
+padding:55px 20px;
 max-width:1100px;
 margin:auto;
 text-align:center;
@@ -158,6 +159,59 @@ font-size:18px;
 color:#8c6f4e;
 }
 
+/* ===== PIX MODERNO ===== */
+
+.pix-container{
+margin-top:40px;
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.pix-container h3{
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
+.pix-box{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#f6f1ea;
+padding:15px 20px;
+border-radius:12px;
+font-weight:bold;
+font-size:18px;
+word-break:break-all;
+}
+
+.pix-btn{
+background:#8c6f4e;
+color:white;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+.pix-btn:hover{
+background:#6e553b;
+}
+
+.mensagem-copiado{
+margin-top:15px;
+color:#8c6f4e;
+display:none;
+font-size:14px;
+font-weight:500;
+}
+
 /* ===== RESTO ===== */
 
 .historia{
@@ -181,19 +235,6 @@ margin:10px;
 
 button:hover{
 background:#6e553b;
-}
-
-.pix-chave{
-font-weight:bold;
-margin-top:10px;
-display:block;
-}
-
-.mensagem-copiado{
-margin-top:10px;
-color:#8c6f4e;
-display:none;
-font-size:14px;
 }
 
 footer{
@@ -243,13 +284,14 @@ border:0;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
+
 </style>
 </head>
 
 <body>
 
 <audio id="musica" preload="auto" loop>
-  <source src="musica/musica.mp3" type="audio/mpeg">
+<source src="musica/musica.mp3" type="audio/mpeg">
 </audio>
 
 <button class="music-btn" id="botaoMusica" onclick="toggleMusica()">🎵 Ativar Música</button>
@@ -295,6 +337,7 @@ Nosso casamento será um momento especial e elegante.
 Pedimos que os convidados venham trajados em estilo <strong>Esporte Fino</strong>, 
 com cores suaves e elegantes.
 </p>
+
 <div class="dresscode-container">
 <div class="dress-card">
 <h3>👔 Homens</h3>
@@ -305,17 +348,21 @@ com cores suaves e elegantes.
 • Gravata opcional
 </p>
 </div>
+
 <div class="dress-card">
 <h3>👗 Mulheres</h3>
 <p>
 • Vestido midi ou longo<br>
 • Macacão elegante<br>
-• Sandália ou salto<br>
+• Sandália ou salto <br>
 • Evitar branco, off-white ou tons muito claros
 </p>
 </div>
 </div>
-  
+
+<div class="dress-highlight">
+✨ Cores sugeridas: tons terrosos, azul marinho, verde oliva, marsala e rosé.
+</div>
 </section>
 
 <section>
@@ -327,14 +374,24 @@ com cores suaves e elegantes.
 
 <section>
 <h2>🎁 Lista de Presentes</h2>
+
 <a href="https://www.amazon.com.br/hz/wishlist/ls/1ED6TGED716CH?ref_=wl_share" target="_blank">
 <button>🎁 Ver Lista na Amazon</button>
 </a>
-<div>
-<div class="pix-chave" id="pix">16285731713</div>
-<button onclick="copiarPix()">💳 Copiar Chave Pix</button>
-<div class="mensagem-copiado" id="mensagemPix">Chave Pix copiada com sucesso!</div>
+
+<div class="pix-container">
+<h3>💳 Presente via Pix</h3>
+
+<div class="pix-box">
+<span id="pix">16285731713</span>
+<button class="pix-btn" onclick="copiarPix()">Copiar</button>
 </div>
+
+<div class="mensagem-copiado" id="mensagemPix">
+✅ Chave Pix copiada com sucesso!
+</div>
+</div>
+
 </section>
 
 <section>
@@ -363,26 +420,26 @@ document.getElementById("contador").innerHTML =
 `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
 },1000);
 
-/* 🎵 MÚSICA */
+/* MÚSICA */
 const musica = document.getElementById("musica");
 const botao = document.getElementById("botaoMusica");
 
 function iniciarMusica() {
-  musica.play().then(() => {
-    botao.innerText = "⏸️ Pausar Música";
-  }).catch(() => {});
+musica.play().then(() => {
+botao.innerText="⏸️ Pausar Música";
+}).catch(()=>{});
 }
 
 document.body.addEventListener("click", iniciarMusica, { once: true });
 
-function toggleMusica() {
-  if (musica.paused) {
-    musica.play();
-    botao.innerText = "⏸️ Pausar Música";
-  } else {
-    musica.pause();
-    botao.innerText = "🎵 Ativar Música";
-  }
+function toggleMusica(){
+if(musica.paused){
+musica.play();
+botao.innerText="⏸️ Pausar Música";
+}else{
+musica.pause();
+botao.innerText="🎵 Ativar Música";
+}
 }
 
 /* PIX */
@@ -391,7 +448,7 @@ const chave=document.getElementById("pix").innerText;
 navigator.clipboard.writeText(chave);
 const msg=document.getElementById("mensagemPix");
 msg.style.display="block";
-setTimeout(()=>{msg.style.display="none";},3000);
+setTimeout(()=>{msg.style.display="none";},2500);
 }
 
 /* PETALAS */
