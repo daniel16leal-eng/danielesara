@@ -336,24 +336,24 @@ document.getElementById("contador").innerHTML =
 const musica = document.getElementById("musica");
 const botao = document.getElementById("botaoMusica");
 
-function iniciarMusica(){
-musica.play();
-botao.innerText="⏸️ Pausar Música";
-document.removeEventListener("click", iniciarMusica);
-document.removeEventListener("touchstart", iniciarMusica);
+function iniciarMusica() {
+  musica.play().then(() => {
+    botao.innerText = "⏸️ Pausar Música";
+  }).catch(() => {
+    console.log("Autoplay bloqueado");
+  });
 }
 
-document.addEventListener("click", iniciarMusica);
-document.addEventListener("touchstart", iniciarMusica);
+document.body.addEventListener("click", iniciarMusica, { once: true });
 
-function toggleMusica(){
-if(musica.paused){
-musica.play();
-botao.innerText="⏸️ Pausar Música";
-}else{
-musica.pause();
-botao.innerText="🎵 Ativar Música";
-}
+function toggleMusica() {
+  if (musica.paused) {
+    musica.play();
+    botao.innerText = "⏸️ Pausar Música";
+  } else {
+    musica.pause();
+    botao.innerText = "🎵 Ativar Música";
+  }
 }
 
 /* PIX */
