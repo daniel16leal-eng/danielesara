@@ -206,7 +206,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 <body>
   
-<button class="music-btn" id="botaoMusica" onclick="toggleMusica()">🎵 Ativar Música</button>
+<audio id="musica" preload="auto" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 <header id="header">
 <div class="header-content">
