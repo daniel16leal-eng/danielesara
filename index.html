@@ -6,7 +6,7 @@
 <title>Daniel & Sara | 15.05.2027</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-  
+
 <style>
 body{
 margin:0;
@@ -116,6 +116,48 @@ border-radius:50%;
 background:rgba(0,0,0,0.7);
 }
 
+/* ===== DRESS CODE ===== */
+
+.dresscode-container{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+margin-top:40px;
+}
+
+.dress-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+flex:1 1 300px;
+max-width:400px;
+transition:0.4s;
+}
+
+.dress-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.dress-card h3{
+font-family:'Playfair Display',serif;
+margin-bottom:15px;
+}
+
+.dress-card p{
+font-size:16px;
+line-height:1.7;
+}
+
+.dress-highlight{
+margin-top:20px;
+font-weight:bold;
+font-size:18px;
+color:#8c6f4e;
+}
+
 /* ===== RESTO ===== */
 
 .historia{
@@ -205,12 +247,12 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 </head>
 
 <body>
-  
+
 <audio id="musica" preload="auto" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-btn" id="botaoMusica" onclick="toggleMusica()">🎵 Ativar Música</button
+<button class="music-btn" id="botaoMusica" onclick="toggleMusica()">🎵 Ativar Música</button>
 
 <header id="header">
 <div class="header-content">
@@ -231,7 +273,6 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 <section>
 <h2>📸 Nossos Momentos</h2>
-
 <div class="carrossel-container" id="container">
 <div class="carrossel" id="carrossel">
 <img src="fotos/foto1.jpeg">
@@ -242,24 +283,19 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 <img src="fotos/foto6.jpeg">
 <img src="fotos/foto7.jpeg">
 </div>
-
 <button class="seta esquerda" onclick="mover(-1)">❮</button>
 <button class="seta direita" onclick="mover(1)">❯</button>
 </div>
-
 </section>
 
 <section>
 <h2>👗 Dress Code</h2>
-
 <p style="max-width:700px;margin:20px auto 40px;line-height:1.8;font-size:18px;">
 Nosso casamento será um momento especial e elegante. 
 Pedimos que os convidados venham trajados em estilo <strong>Esporte Fino</strong>, 
 com cores suaves e elegantes.
 </p>
-
 <div class="dresscode-container">
-
 <div class="dress-card">
 <h3>👔 Homens</h3>
 <p>
@@ -269,7 +305,6 @@ com cores suaves e elegantes.
 • Gravata opcional
 </p>
 </div>
-
 <div class="dress-card">
 <h3>👗 Mulheres</h3>
 <p>
@@ -279,13 +314,10 @@ com cores suaves e elegantes.
 • Evitar branco, off-white ou tons muito claros
 </p>
 </div>
-
 </div>
-
 <div class="dress-highlight">
 ✨ Cores sugeridas: tons terrosos, azul marinho, verde oliva, marsala e rosé.
 </div>
-
 </section>
 
 <section>
@@ -297,17 +329,14 @@ com cores suaves e elegantes.
 
 <section>
 <h2>🎁 Lista de Presentes</h2>
-
 <a href="https://www.amazon.com.br/hz/wishlist/ls/1ED6TGED716CH?ref_=wl_share" target="_blank">
 <button>🎁 Ver Lista na Amazon</button>
 </a>
-
 <div>
 <div class="pix-chave" id="pix">16285731713</div>
 <button onclick="copiarPix()">💳 Copiar Chave Pix</button>
 <div class="mensagem-copiado" id="mensagemPix">Chave Pix copiada com sucesso!</div>
 </div>
-
 </section>
 
 <section>
@@ -336,16 +365,14 @@ document.getElementById("contador").innerHTML =
 `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
 },1000);
 
-/* 🎵 MÚSICA AUTOMÁTICA AO PRIMEIRO TOQUE */
+/* 🎵 MÚSICA */
 const musica = document.getElementById("musica");
 const botao = document.getElementById("botaoMusica");
 
 function iniciarMusica() {
   musica.play().then(() => {
     botao.innerText = "⏸️ Pausar Música";
-  }).catch(() => {
-    console.log("Autoplay bloqueado");
-  });
+  }).catch(() => {});
 }
 
 document.body.addEventListener("click", iniciarMusica, { once: true });
