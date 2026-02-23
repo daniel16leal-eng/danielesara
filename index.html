@@ -441,11 +441,31 @@ botao.innerText="🎵 Ativar Música";
 
 /* PIX */
 function copiarPix(){
-const chave=document.getElementById("pix").innerText;
-navigator.clipboard.writeText(chave);
-const msg=document.getElementById("mensagemPix");
-msg.style.display="block";
-setTimeout(()=>{msg.style.display="none";},2500);
+const chave = document.getElementById("pix").innerText;
+const msg = document.getElementById("mensagemPix");
+
+if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(chave).then(() => {
+        msg.style.display = "block";
+        setTimeout(()=>{msg.style.display="none";},2500);
+    }).catch(() => {
+        fallbackCopy(chave);
+    });
+} else {
+    fallbackCopy(chave);
+}
+
+function fallbackCopy(text) {
+    const input = document.createElement("textarea");
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+
+    msg.style.display = "block";
+    setTimeout(()=>{msg.style.display="none";},2500);
+}
 }
 
 /* PETALAS */
