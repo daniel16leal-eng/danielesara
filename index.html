@@ -74,7 +74,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* CARROSSEL */
+/* ===== CARROSSEL ===== */
 
 .carrossel-container{
 position:relative;
@@ -117,7 +117,7 @@ border-radius:50%;
 background:rgba(0,0,0,0.7);
 }
 
-/* DRESS CODE */
+/* ===== DRESS CODE ===== */
 
 .dresscode-container{
 display:flex;
@@ -152,25 +152,14 @@ font-size:16px;
 line-height:1.7;
 }
 
-/* FORM PRESENTES */
-
-.form-presente{
-max-width:700px;
-margin:40px auto;
-background:white;
-padding:20px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+.dress-highlight{
+margin-top:20px;
+font-weight:bold;
+font-size:18px;
+color:#8c6f4e;
 }
 
-.form-presente iframe{
-width:100%;
-height:900px;
-border:0;
-border-radius:10px;
-}
-
-/* PIX */
+/* ===== PIX MODERNO ===== */
 
 .pix-container{
 margin-top:40px;
@@ -181,6 +170,11 @@ box-shadow:0 10px 30px rgba(0,0,0,0.08);
 max-width:500px;
 margin-left:auto;
 margin-right:auto;
+}
+
+.pix-container h3{
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
 }
 
 .pix-box{
@@ -202,6 +196,12 @@ border:none;
 padding:8px 18px;
 border-radius:20px;
 cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+.pix-btn:hover{
+background:#6e553b;
 }
 
 .mensagem-copiado{
@@ -209,16 +209,32 @@ margin-top:15px;
 color:#8c6f4e;
 display:none;
 font-size:14px;
+font-weight:500;
 }
 
-/* MAPA */
+/* ===== RESTO ===== */
 
-.mapa iframe{
-width:100%;
-height:350px;
-border:0;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.historia{
+max-width:800px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
+
+button{
+background:#8c6f4e;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:30px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+margin:10px;
+}
+
+button:hover{
+background:#6e553b;
 }
 
 footer{
@@ -239,6 +255,34 @@ border-radius:50px;
 padding:12px 20px;
 cursor:pointer;
 z-index:999;
+transition:0.3s;
+}
+
+.music-btn:hover{
+background:#6e553b;
+}
+
+.petala{
+position:fixed;
+top:-10px;
+width:12px;
+height:12px;
+background:#e8cfc4;
+border-radius:50%;
+opacity:0.8;
+animation:cair linear infinite;
+}
+
+@keyframes cair{
+to{ transform:translateY(110vh) rotate(360deg); }
+}
+
+.mapa iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 </style>
@@ -262,11 +306,11 @@ z-index:999;
 
 <section>
 <h2>✨ Nossa História</h2>
-<p style="max-width:800px;margin:auto;font-size:18px;line-height:1.9">
-Entre encontros inesperados e planos que Deus cuidadosamente escreveu,
-nasceu um amor leve, sincero e cheio de propósito.
-Agora convidamos você para celebrar o início do nosso para sempre.
-</p>
+<div class="historia">
+<p>Entre encontros inesperados e planos que Deus cuidadosamente escreveu, nasceu um amor leve, sincero e cheio de propósito.</p>
+<p>Descobrimos que amar é escolher todos os dias caminhar juntos, sonhar juntos e crescer juntos.</p>
+<p>Agora, com o coração transbordando alegria, convidamos você para celebrar o início do nosso para sempre.</p>
+</div>
 </section>
 
 <section>
@@ -277,6 +321,11 @@ Agora convidamos você para celebrar o início do nosso para sempre.
 <img src="fotos/foto2.jpeg">
 <img src="fotos/foto3.jpeg">
 <img src="fotos/foto4.jpeg">
+<img src="fotos/foto5.jpeg">
+<img src="fotos/foto6.jpeg">
+<img src="fotos/foto7.jpeg">
+<img src="fotos/foto8.jpeg">
+<img src="fotos/foto9.jpeg">    
 </div>
 <button class="seta esquerda" onclick="mover(-1)">❮</button>
 <button class="seta direita" onclick="mover(1)">❯</button>
@@ -285,28 +334,34 @@ Agora convidamos você para celebrar o início do nosso para sempre.
 
 <section>
 <h2>👗 Dress Code</h2>
+<p style="max-width:700px;margin:20px auto 40px;line-height:1.8;font-size:18px;">
+Nosso casamento será um momento especial e elegante. 
+Pedimos que os convidados venham trajados em estilo <strong>Esporte Fino</strong>, 
+com cores suaves e elegantes.
+</p>
 
 <div class="dresscode-container">
-
 <div class="dress-card">
 <h3>👔 Homens</h3>
 <p>
-Terno ou blazer com calça social<br>
-Camisa social<br>
-Sapato social
+• Terno ou blazer com calça social<br>
+• Camisa social<br>
+• Sapato social ou sapatenis<br>
+• Gravata opcional
 </p>
 </div>
 
 <div class="dress-card">
 <h3>👗 Mulheres</h3>
 <p>
-Vestido midi ou longo<br>
-Macacão elegante<br>
-Evitar branco
+• Vestido midi ou longo<br>
+• Macacão elegante<br>
+• Sandália ou salto <br>
+• Evitar branco, off-white ou tons muito claros
 </p>
 </div>
-
 </div>
+
 </section>
 
 <section>
@@ -319,18 +374,11 @@ Evitar branco
 <section>
 <h2>🎁 Lista de Presentes</h2>
 
-<p style="max-width:700px;margin:20px auto 40px;font-size:18px;">
-Escolha um presente abaixo caso deseje nos presentear.
-</p>
-
-<div class="form-presente">
-
-<iframe src="SEU_LINK_DO_FORMS_AQUI"></iframe>
-
-</div>
+<a href="https://www.amazon.com.br/hz/wishlist/ls/1ED6TGED716CH?ref_=wl_share" target="_blank">
+<button>🎁 Ver Lista na Amazon</button>
+</a>
 
 <div class="pix-container">
-
 <h3>💳 Presente via Pix</h3>
 
 <div class="pix-box">
@@ -341,7 +389,6 @@ Escolha um presente abaixo caso deseje nos presentear.
 <div class="mensagem-copiado" id="mensagemPix">
 ✅ Chave Pix copiada com sucesso!
 </div>
-
 </div>
 
 </section>
@@ -360,86 +407,120 @@ Com amor, Daniel & Sara 💍
 <script>
 
 /* CONTADOR */
-
 const dataCasamento = new Date("May 15, 2027 18:00:00").getTime();
-
 setInterval(function(){
-
 const agora = new Date().getTime();
 const distancia = dataCasamento - agora;
-
 const dias = Math.floor(distancia/(1000*60*60*24));
 const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
 const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
 const segundos = Math.floor((distancia%(1000*60))/1000);
-
 document.getElementById("contador").innerHTML =
 `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-
 },1000);
 
 /* MÚSICA */
-
 const musica = document.getElementById("musica");
 const botao = document.getElementById("botaoMusica");
 
-function toggleMusica(){
-
-if(musica.paused){
-
-musica.play();
+function iniciarMusica() {
+musica.play().then(() => {
 botao.innerText="⏸️ Pausar Música";
-
-}else{
-
-musica.pause();
-botao.innerText="🎵 Ativar Música";
-
+}).catch(()=>{});
 }
 
+document.body.addEventListener("click", iniciarMusica, { once: true });
+
+function toggleMusica(){
+if(musica.paused){
+musica.play();
+botao.innerText="⏸️ Pausar Música";
+}else{
+musica.pause();
+botao.innerText="🎵 Ativar Música";
+}
 }
 
 /* PIX */
-
 function copiarPix(){
-
 const chave = document.getElementById("pix").innerText;
 const msg = document.getElementById("mensagemPix");
 
-navigator.clipboard.writeText(chave).then(()=>{
-
-msg.style.display="block";
-
-setTimeout(()=>{
-msg.style.display="none";
-},2500);
-
-});
-
+if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(chave).then(() => {
+        msg.style.display = "block";
+        setTimeout(()=>{msg.style.display="none";},2500);
+    }).catch(() => {
+        fallbackCopy(chave);
+    });
+} else {
+    fallbackCopy(chave);
 }
 
+function fallbackCopy(text) {
+    const input = document.createElement("textarea");
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+
+    msg.style.display = "block";
+    setTimeout(()=>{msg.style.display="none";},2500);
+}
+}
+
+/* PETALAS */
+function criarPetala(){
+const petala=document.createElement("div");
+petala.classList.add("petala");
+petala.style.left=Math.random()*100+"vw";
+petala.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(petala);
+setTimeout(()=>{petala.remove();},10000);
+}
+setInterval(criarPetala,600);
+
+/* ANIMAÇÃO SCROLL */
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",function(){
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add("ativo");
+}
+});
+});
+
 /* CARROSSEL */
-
 let index=0;
-
 const carrossel=document.getElementById("carrossel");
-
 const total=carrossel.children.length;
 
 function mover(direcao){
-
 index+=direcao;
-
 if(index<0) index=total-1;
 if(index>=total) index=0;
-
 carrossel.style.transform=`translateX(-${index*100}%)`;
-
 }
 
-setInterval(()=>{
-mover(1);
-},5000);
+setInterval(()=>{ mover(1); },5000);
+
+/* SWIPE MOBILE */
+let startX=0;
+document.getElementById("container").addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX;
+});
+document.getElementById("container").addEventListener("touchend",e=>{
+let endX=e.changedTouches[0].clientX;
+if(startX-endX>50) mover(1);
+if(endX-startX>50) mover(-1);
+});
+
+/* HEADER FADE */
+window.addEventListener("scroll",()=>{
+let scroll=window.scrollY;
+document.getElementById("header").style.opacity=1-scroll/600;
+});
 
 </script>
 
