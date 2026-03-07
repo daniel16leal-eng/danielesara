@@ -23,8 +23,13 @@ font-size:18px;
 
 header{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-url('fotos/foto1.jpeg') center/cover no-repeat;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url("fotos/foto1.jpeg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
