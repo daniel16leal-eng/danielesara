@@ -1,291 +1,16 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Daniel & Sara | 15.05.2027</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-background:#f6f1ea;
-color:#5a4a3f;
-overflow-x:hidden;
-scroll-behavior:smooth;
-}
-
-h1,h2{
-font-family:'Playfair Display',serif;
-letter-spacing:1px;
-}
-
-header{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-url('fotos/foto1.jpeg') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
-transition:opacity 0.6s ease;
-}
-
-.header-content{
-background:rgba(0,0,0,0.35);
-padding:40px;
-border-radius:20px;
-backdrop-filter: blur(4px);
-}
-
-h1{
-font-size:52px;
-margin:0;
-}
-
-.sub{
-margin-top:10px;
-font-size:18px;
-letter-spacing:3px;
-}
-
-.contador{
-margin-top:20px;
-font-size:22px;
-}
-
-section{
-padding:55px 20px;
-max-width:1100px;
-margin:auto;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:all 1.2s ease;
-}
-
-section.ativo{
-opacity:1;
-transform:translateY(0);
-}
-
-/* ===== CARROSSEL ===== */
-
-.carrossel-container{
-position:relative;
-max-width:900px;
-margin:40px auto;
-overflow:hidden;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-.carrossel{
-display:flex;
-transition:transform 0.6s ease-in-out;
-}
-
-.carrossel img{
-width:100%;
-flex-shrink:0;
-user-select:none;
-pointer-events:none;
-}
-
-.seta{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.4);
-color:white;
-border:none;
-padding:12px 18px;
-cursor:pointer;
-font-size:20px;
-border-radius:50%;
-}
-
-.seta.esquerda{ left:15px; }
-.seta.direita{ right:15px; }
-
-.seta:hover{
-background:rgba(0,0,0,0.7);
-}
-
-/* ===== DRESS CODE ===== */
-
-.dresscode-container{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
-margin-top:40px;
-}
-
-.dress-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-flex:1 1 300px;
-max-width:400px;
-transition:0.4s;
-}
-
-.dress-card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-.dress-card h3{
-font-family:'Playfair Display',serif;
-margin-bottom:15px;
-}
-
-.dress-card p{
-font-size:16px;
-line-height:1.7;
-}
-
-.dress-highlight{
-margin-top:20px;
-font-weight:bold;
-font-size:18px;
-color:#8c6f4e;
-}
-
-/* ===== PIX MODERNO ===== */
-
-.pix-container{
-margin-top:40px;
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-max-width:500px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.pix-container h3{
-margin-bottom:20px;
-font-family:'Playfair Display',serif;
-}
-
-.pix-box{
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#f6f1ea;
-padding:15px 20px;
-border-radius:12px;
-font-weight:bold;
-font-size:18px;
-word-break:break-all;
-}
-
-.pix-btn{
-background:#8c6f4e;
-color:white;
-border:none;
-padding:8px 18px;
-border-radius:20px;
-cursor:pointer;
-transition:0.3s;
-font-size:14px;
-}
-
-.pix-btn:hover{
-background:#6e553b;
-}
-
-.mensagem-copiado{
-margin-top:15px;
-color:#8c6f4e;
-display:none;
-font-size:14px;
-font-weight:500;
-}
-
-/* ===== RESTO ===== */
-
-.historia{
-max-width:800px;
-margin:auto;
-line-height:1.9;
-font-size:18px;
-}
-
-button{
-background:#8c6f4e;
-color:white;
-border:none;
-padding:14px 30px;
-border-radius:30px;
-font-size:15px;
-cursor:pointer;
-transition:0.3s;
-margin:10px;
-}
-
-button:hover{
-background:#6e553b;
-}
-
-footer{
-background:#5a4a3f;
-color:white;
-padding:30px;
-margin-top:60px;
-}
-
-.music-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#8c6f4e;
-color:white;
-border:none;
-border-radius:50px;
-padding:12px 20px;
-cursor:pointer;
-z-index:999;
-transition:0.3s;
-}
-
-.music-btn:hover{
-background:#6e553b;
-}
-
-.petala{
-position:fixed;
-top:-10px;
-width:12px;
-height:12px;
-background:#e8cfc4;
-border-radius:50%;
-opacity:0.8;
-animation:cair linear infinite;
-}
-
-@keyframes cair{
-to{ transform:translateY(110vh) rotate(360deg); }
-}
-
-.mapa iframe{
-width:100%;
-height:350px;
-border:0;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-</style>
 </head>
 
 <body>
@@ -298,25 +23,51 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 <header id="header">
 <div class="header-content">
+
 <h1>Daniel & Sara</h1>
-<div class="sub">15 DE MAIO DE 2027 • MAGÉ/RJ</div>
+
+<div class="sub">
+15 DE MAIO DE 2027 • MAGÉ/RJ
+</div>
+
 <div class="contador" id="contador"></div>
+
 </div>
 </header>
 
-<section>
-<h2>✨ Nossa História</h2>
-<div class="historia">
-<p>Entre encontros inesperados e planos que Deus cuidadosamente escreveu, nasceu um amor leve, sincero e cheio de propósito.</p>
-<p>Descobrimos que amar é escolher todos os dias caminhar juntos, sonhar juntos e crescer juntos.</p>
-<p>Agora, com o coração transbordando alegria, convidamos você para celebrar o início do nosso para sempre.</p>
-</div>
-</section>
 
 <section>
+
+<h2>✨ Nossa História</h2>
+
+<div class="historia">
+
+<p>
+Entre encontros inesperados e planos que Deus cuidadosamente escreveu, nasceu um amor leve, sincero e cheio de propósito.
+</p>
+
+<p>
+Descobrimos que amar é escolher todos os dias caminhar juntos, sonhar juntos e crescer juntos.
+</p>
+
+<p>
+Agora, com o coração transbordando alegria, convidamos você para celebrar o início do nosso para sempre.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
 <h2>📸 Nossos Momentos</h2>
+
 <div class="carrossel-container" id="container">
+
 <div class="carrossel" id="carrossel">
+
 <img src="fotos/foto1.jpeg">
 <img src="fotos/foto2.jpeg">
 <img src="fotos/foto3.jpeg">
@@ -326,204 +77,151 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 <img src="fotos/foto7.jpeg">
 <img src="fotos/foto8.jpeg">
 <img src="fotos/foto9.jpeg">
+
 </div>
 
 <button class="seta esquerda" onclick="mover(-1)">❮</button>
 <button class="seta direita" onclick="mover(1)">❯</button>
+
 </div>
+
 </section>
 
+
+
 <section>
+
 <h2>🤵🏻 Dress Code</h2>
-<p style="max-width:700px;margin:20px auto 40px;line-height:1.8;font-size:18px;">
-Nosso casamento será um momento especial e elegante. 
-Pedimos que os convidados venham trajados em estilo <strong>Esporte Fino</strong>, 
+
+<p class="texto-central">
+
+Nosso casamento será um momento especial e elegante.
+Pedimos que os convidados venham trajados em estilo
+<strong>Esporte Fino</strong>,
 com cores suaves e elegantes.
+
 </p>
 
+
 <div class="dresscode-container">
+
 <div class="dress-card">
+
 <h3>👔 Homens</h3>
+
 <p>
 • Terno ou blazer com calça social<br>
 • Camisa social<br>
 • Sapato social ou sapatenis<br>
 • Gravata opcional
 </p>
+
 </div>
 
+
 <div class="dress-card">
+
 <h3>👗 Mulheres</h3>
+
 <p>
 • Vestido midi ou longo<br>
 • Macacão elegante<br>
-• Sandália ou salto <br>
-• Evitar branco, off-white ou tons muito claros
+• Sandália ou salto<br>
+• Evitar branco ou tons muito claros
 </p>
+
 </div>
+
 </div>
 
 </section>
 
+
+
 <section>
+
 <h2>💌 Confirmação de Presença</h2>
+
 <a href="https://forms.gle/JYt4zUVPeDtNtnD37" target="_blank">
-<button>Confirmar Presença</button>
+
+<button>
+Confirmar Presença
+</button>
+
 </a>
+
 </section>
 
+
+
 <section>
+
 <h2>🎁 Lista de Presentes</h2>
 
-<a href="https://www.amazon.com.br/hz/wishlist/ls/1ED6TGED716CH?ref_=wl_share" target="_blank">
-<button>🎁 Ver Lista na Amazon</button>
-</a>
+<p class="texto-central">
+
+Se desejar nos presentear,
+escolha um item da lista abaixo.
+
+</p>
+
+
+<div class="form-presente">
+
+<iframe
+src="COLE_AQUI_O_LINK_DO_FORMS"
+allowfullscreen>
+</iframe>
+
+</div>
+
 
 <div class="pix-container">
+
 <h3>💳 Presente via Pix</h3>
 
 <div class="pix-box">
+
 <span id="pix">16285731713</span>
-<button class="pix-btn" onclick="copiarPix()">Copiar</button>
+
+<button class="pix-btn" onclick="copiarPix()">
+Copiar
+</button>
+
 </div>
 
 <div class="mensagem-copiado" id="mensagemPix">
+
 ✅ Chave Pix copiada com sucesso!
+
 </div>
+
 </div>
 
 </section>
+
+
 
 <section>
+
 <h2>📍 Local do Evento</h2>
+
 <div class="mapa">
+
 <iframe src="https://www.google.com/maps?q=Magé,RJ&output=embed"></iframe>
+
 </div>
+
 </section>
 
+
 <footer>
+
 Com amor, Daniel & Sara 💍
+
 </footer>
 
-<script>
-
-/* CONTADOR */
-const dataCasamento = new Date("May 15, 2027 18:00:00").getTime();
-setInterval(function(){
-const agora = new Date().getTime();
-const distancia = dataCasamento - agora;
-const dias = Math.floor(distancia/(1000*60*60*24));
-const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
-const segundos = Math.floor((distancia%(1000*60))/1000);
-document.getElementById("contador").innerHTML =
-`Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-},1000);
-
-/* MÚSICA */
-const musica = document.getElementById("musica");
-const botao = document.getElementById("botaoMusica");
-
-function iniciarMusica() {
-musica.play().then(() => {
-botao.innerText="⏸️ Pausar Música";
-}).catch(()=>{});
-}
-
-document.body.addEventListener("click", iniciarMusica, { once: true });
-
-function toggleMusica(){
-if(musica.paused){
-musica.play();
-botao.innerText="⏸️ Pausar Música";
-}else{
-musica.pause();
-botao.innerText="🎵 Ativar Música";
-}
-}
-
-/* PIX */
-function copiarPix(){
-const chave = document.getElementById("pix").innerText;
-const msg = document.getElementById("mensagemPix");
-
-if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(chave).then(() => {
-        msg.style.display = "block";
-        setTimeout(()=>{msg.style.display="none";},2500);
-    }).catch(() => {
-        fallbackCopy(chave);
-    });
-} else {
-    fallbackCopy(chave);
-}
-
-function fallbackCopy(text) {
-    const input = document.createElement("textarea");
-    input.value = text;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("copy");
-    document.body.removeChild(input);
-
-    msg.style.display = "block";
-    setTimeout(()=>{msg.style.display="none";},2500);
-}
-}
-
-/* PETALAS */
-function criarPetala(){
-const petala=document.createElement("div");
-petala.classList.add("petala");
-petala.style.left=Math.random()*100+"vw";
-petala.style.animationDuration=(Math.random()*5+5)+"s";
-document.body.appendChild(petala);
-setTimeout(()=>{petala.remove();},10000);
-}
-setInterval(criarPetala,600);
-
-/* ANIMAÇÃO SCROLL */
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",function(){
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("ativo");
-}
-});
-});
-
-/* CARROSSEL */
-let index=0;
-const carrossel=document.getElementById("carrossel");
-const total=carrossel.children.length;
-
-function mover(direcao){
-index+=direcao;
-if(index<0) index=total-1;
-if(index>=total) index=0;
-carrossel.style.transform=`translateX(-${index*100}%)`;
-}
-
-setInterval(()=>{ mover(1); },5000);
-
-/* SWIPE MOBILE */
-let startX=0;
-document.getElementById("container").addEventListener("touchstart",e=>{
-startX=e.touches[0].clientX;
-});
-document.getElementById("container").addEventListener("touchend",e=>{
-let endX=e.changedTouches[0].clientX;
-if(startX-endX>50) mover(1);
-if(endX-startX>50) mover(-1);
-});
-
-/* HEADER FADE */
-window.addEventListener("scroll",()=>{
-let scroll=window.scrollY;
-document.getElementById("header").style.opacity=1-scroll/600;
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
