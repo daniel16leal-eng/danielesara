@@ -74,7 +74,7 @@ botao.innerText="🎵 Ativar Música";
 
 /* PIX */
 
-function copiarPix(){
+window.copiarPix = function(){
 
 const chave = document.getElementById("pix").innerText;
 
