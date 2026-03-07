@@ -114,7 +114,9 @@ function mostrarMensagem(){
 
 const msg = document.getElementById("mensagemPix");
 
+if(msg){
 msg.style.display="block";
+}
 
 setTimeout(()=>{
 msg.style.display="none";
