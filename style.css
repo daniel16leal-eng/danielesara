@@ -305,8 +305,8 @@ position:fixed;
 top:-10px;
 width:12px;
 height:12px;
-background:#e8cfc4;
-border-radius:50%;
+background:radial-gradient(circle at 30% 30%, #f2d6d0, #e8cfc4);
+border-radius:60% 40% 60% 40%;
 opacity:0.8;
 animation:cair linear infinite;
 }
