@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 /* CONTADOR */
 
 const dataCasamento = new Date("May 15, 2027 18:00:00").getTime();
@@ -5,7 +7,6 @@ const dataCasamento = new Date("May 15, 2027 18:00:00").getTime();
 setInterval(function(){
 
 const agora = new Date().getTime();
-
 const distancia = dataCasamento - agora;
 
 const dias = Math.floor(distancia/(1000*60*60*24));
@@ -13,8 +14,11 @@ const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
 const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
 const segundos = Math.floor((distancia%(1000*60))/1000);
 
-document.getElementById("contador").innerHTML =
-`Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+const contador = document.getElementById("contador");
+
+if(contador){
+contador.innerHTML = `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+}
 
 },1000);
 
@@ -26,28 +30,42 @@ const botao = document.getElementById("botaoMusica");
 
 function iniciarMusica(){
 
+if(musica){
+
 musica.play().then(()=>{
 
+if(botao){
 botao.innerText="⏸️ Pausar Música";
+}
 
 }).catch(()=>{});
+
+}
 
 }
 
 document.body.addEventListener("click", iniciarMusica, { once:true });
 
 
-function toggleMusica(){
+window.toggleMusica = function(){
+
+if(!musica) return;
 
 if(musica.paused){
 
 musica.play();
+
+if(botao){
 botao.innerText="⏸️ Pausar Música";
+}
 
 }else{
 
 musica.pause();
+
+if(botao){
 botao.innerText="🎵 Ativar Música";
+}
 
 }
 
@@ -56,13 +74,19 @@ botao.innerText="🎵 Ativar Música";
 
 /* PIX */
 
-function copiarPix(){
+window.copiarPix = function(){
 
-const chave = document.getElementById("pix").innerText;
+const chaveEl = document.getElementById("pix");
+
+if(!chaveEl) return;
+
+const chave = chaveEl.innerText;
 
 navigator.clipboard.writeText(chave);
 
 const msg = document.getElementById("mensagemPix");
+
+if(msg){
 
 msg.style.display="block";
 
@@ -74,10 +98,14 @@ msg.style.display="none";
 
 }
 
+}
+
 
 /* ANIMAÇÃO DAS SEÇÕES */
 
 const sections = document.querySelectorAll("section");
+
+if(sections.length > 0){
 
 const observer = new IntersectionObserver((entries)=>{
 
@@ -96,5 +124,9 @@ entry.target.classList.add("ativo");
 sections.forEach((section)=>{
 
 observer.observe(section);
+
+});
+
+}
 
 });
