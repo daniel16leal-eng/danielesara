@@ -17,12 +17,19 @@ max-width:700px;
 margin:20px auto 40px;
 line-height:1.8;
 font-size:18px;
+padding:0 15px;
 }
 
+/* HEADER */
+
 header{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-url('fotos/foto1.jpeg') center/cover no-repeat;
+min-height:100vh;
+background-image:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url("./fotos/foto1.jpeg");
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -37,6 +44,8 @@ background:rgba(0,0,0,0.35);
 padding:40px;
 border-radius:20px;
 backdrop-filter: blur(4px);
+max-width:600px;
+width:100%;
 }
 
 h1{
@@ -54,6 +63,8 @@ letter-spacing:3px;
 margin-top:20px;
 font-size:22px;
 }
+
+/* SEÇÕES */
 
 section{
 padding:55px 20px;
@@ -86,4 +97,31 @@ width:100%;
 height:900px;
 border:0;
 border-radius:12px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:768px){
+
+h1{
+font-size:36px;
+}
+
+.sub{
+font-size:15px;
+letter-spacing:2px;
+}
+
+.contador{
+font-size:18px;
+}
+
+.header-content{
+padding:30px;
+}
+
+section{
+padding:40px 15px;
+}
+
 }
