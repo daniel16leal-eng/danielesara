@@ -132,7 +132,33 @@ window.mover(1);
 
 }, 5000);
   
+/* PETALAS CAINDO */
 
+function criarPetala(){
+
+const petala = document.createElement("div");
+
+petala.classList.add("petala");
+
+petala.style.left = Math.random() * 100 + "vw";
+
+petala.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+petala.style.opacity = Math.random();
+
+document.body.appendChild(petala);
+
+setTimeout(()=>{
+
+petala.remove();
+
+},10000);
+
+}
+
+setInterval(criarPetala, 400);
+
+  
 /* ANIMAÇÃO DAS SEÇÕES */
 
 const sections = document.querySelectorAll("section");
