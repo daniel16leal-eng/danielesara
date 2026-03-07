@@ -1,1 +1,314 @@
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f6f1ea;
+color:#5a4a3f;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
 
+h1,h2{
+font-family:'Playfair Display',serif;
+letter-spacing:1px;
+}
+
+.texto-central{
+max-width:700px;
+margin:20px auto 40px;
+line-height:1.8;
+font-size:18px;
+}
+
+/* HEADER */
+
+header{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('fotos/foto1.jpeg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+transition:opacity 0.6s ease;
+}
+
+.header-content{
+background:rgba(0,0,0,0.35);
+padding:40px;
+border-radius:20px;
+backdrop-filter: blur(4px);
+}
+
+h1{
+font-size:52px;
+margin:0;
+}
+
+.sub{
+margin-top:10px;
+font-size:18px;
+letter-spacing:3px;
+}
+
+.contador{
+margin-top:20px;
+font-size:22px;
+}
+
+/* SECTIONS */
+
+section{
+padding:55px 20px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+section.ativo{
+opacity:1;
+transform:translateY(0);
+}
+
+/* HISTORIA */
+
+.historia{
+max-width:800px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
+
+/* CARROSSEL */
+
+.carrossel-container{
+position:relative;
+max-width:900px;
+margin:40px auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.carrossel{
+display:flex;
+transition:transform 0.6s ease-in-out;
+}
+
+.carrossel img{
+width:100%;
+flex-shrink:0;
+user-select:none;
+pointer-events:none;
+}
+
+.seta{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.4);
+color:white;
+border:none;
+padding:12px 18px;
+cursor:pointer;
+font-size:20px;
+border-radius:50%;
+}
+
+.seta.esquerda{
+left:15px;
+}
+
+.seta.direita{
+right:15px;
+}
+
+.seta:hover{
+background:rgba(0,0,0,0.7);
+}
+
+/* DRESS CODE */
+
+.dresscode-container{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+margin-top:40px;
+}
+
+.dress-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+flex:1 1 300px;
+max-width:400px;
+transition:0.4s;
+}
+
+.dress-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.dress-card h3{
+font-family:'Playfair Display',serif;
+margin-bottom:15px;
+}
+
+.dress-card p{
+font-size:16px;
+line-height:1.7;
+}
+
+/* BOTÕES */
+
+button{
+background:#8c6f4e;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:30px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+margin:10px;
+}
+
+button:hover{
+background:#6e553b;
+}
+
+/* FORM PRESENTE */
+
+.form-presente{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-presente iframe{
+width:100%;
+height:900px;
+border:0;
+border-radius:12px;
+}
+
+/* PIX */
+
+.pix-container{
+margin-top:40px;
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.pix-container h3{
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
+.pix-box{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#f6f1ea;
+padding:15px 20px;
+border-radius:12px;
+font-weight:bold;
+font-size:18px;
+word-break:break-all;
+}
+
+.pix-btn{
+background:#8c6f4e;
+color:white;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+.pix-btn:hover{
+background:#6e553b;
+}
+
+.mensagem-copiado{
+margin-top:15px;
+color:#8c6f4e;
+display:none;
+font-size:14px;
+font-weight:500;
+}
+
+/* MAPA */
+
+.mapa iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+background:#5a4a3f;
+color:white;
+padding:30px;
+margin-top:60px;
+}
+
+/* BOTÃO MUSICA */
+
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#8c6f4e;
+color:white;
+border:none;
+border-radius:50px;
+padding:12px 20px;
+cursor:pointer;
+z-index:999;
+transition:0.3s;
+}
+
+.music-btn:hover{
+background:#6e553b;
+}
+
+/* PETALAS */
+
+.petala{
+position:fixed;
+top:-10px;
+width:12px;
+height:12px;
+background:#e8cfc4;
+border-radius:50%;
+opacity:0.8;
+animation:cair linear infinite;
+}
+
+@keyframes cair{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
