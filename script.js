@@ -74,29 +74,51 @@ botao.innerText="🎵 Ativar Música";
 
 /* PIX */
 
-window.copiarPix = function(){
+function copiarPix(){
 
-const chaveEl = document.getElementById("pix");
+const chave = document.getElementById("pix").innerText;
 
-if(!chaveEl) return;
+if(navigator.clipboard){
 
-const chave = chaveEl.innerText;
+navigator.clipboard.writeText(chave).then(()=>{
+mostrarMensagem();
+}).catch(()=>{
+copiarFallback(chave);
+});
 
-navigator.clipboard.writeText(chave);
+}else{
+
+copiarFallback(chave);
+
+}
+
+}
+
+function copiarFallback(texto){
+
+const input = document.createElement("textarea");
+input.value = texto;
+
+document.body.appendChild(input);
+
+input.select();
+document.execCommand("copy");
+
+document.body.removeChild(input);
+
+mostrarMensagem();
+
+}
+
+function mostrarMensagem(){
 
 const msg = document.getElementById("mensagemPix");
-
-if(msg){
 
 msg.style.display="block";
 
 setTimeout(()=>{
-
 msg.style.display="none";
-
 },2500);
-
-}
 
 }
 
