@@ -74,6 +74,15 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* HISTORIA */
+
+.historia{
+max-width:800px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
+
 /* CARROSSEL */
 
 .carrossel-container{
@@ -110,8 +119,13 @@ font-size:20px;
 border-radius:50%;
 }
 
-.seta.esquerda{ left:15px; }
-.seta.direita{ right:15px; }
+.seta.esquerda{
+left:15px;
+}
+
+.seta.direita{
+right:15px;
+}
 
 .seta:hover{
 background:rgba(0,0,0,0.7);
@@ -140,6 +154,34 @@ transition:0.4s;
 .dress-card:hover{
 transform:translateY(-8px);
 box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.dress-card h3{
+font-family:'Playfair Display',serif;
+margin-bottom:15px;
+}
+
+.dress-card p{
+font-size:16px;
+line-height:1.7;
+}
+
+/* BOTÕES */
+
+button{
+background:#8c6f4e;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:30px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+margin:10px;
+}
+
+button:hover{
+background:#6e553b;
 }
 
 /* FORM PRESENTE */
@@ -173,6 +215,11 @@ margin-left:auto;
 margin-right:auto;
 }
 
+.pix-container h3{
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
 .pix-box{
 display:flex;
 align-items:center;
@@ -192,6 +239,12 @@ border:none;
 padding:8px 18px;
 border-radius:20px;
 cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+.pix-btn:hover{
+background:#6e553b;
 }
 
 .mensagem-copiado{
@@ -199,6 +252,7 @@ margin-top:15px;
 color:#8c6f4e;
 display:none;
 font-size:14px;
+font-weight:500;
 }
 
 /* MAPA */
@@ -209,6 +263,15 @@ height:350px;
 border:0;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+background:#5a4a3f;
+color:white;
+padding:30px;
+margin-top:60px;
 }
 
 /* BOTÃO MUSICA */
@@ -224,9 +287,14 @@ border-radius:50px;
 padding:12px 20px;
 cursor:pointer;
 z-index:999;
+transition:0.3s;
 }
 
-/* PÉTALAS */
+.music-btn:hover{
+background:#6e553b;
+}
+
+/* PETALAS */
 
 .petala{
 position:fixed;
@@ -240,5 +308,7 @@ animation:cair linear infinite;
 }
 
 @keyframes cair{
-to{ transform:translateY(110vh) rotate(360deg); }
+to{
+transform:translateY(110vh) rotate(360deg);
+}
 }
