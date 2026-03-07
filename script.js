@@ -100,6 +100,38 @@ msg.style.display="none";
 
 }
 
+/* CARROSSEL */
+
+let index = 0;
+
+window.mover = function(direcao){
+
+const carrossel = document.getElementById("carrossel");
+const imagens = carrossel.querySelectorAll("img");
+
+index += direcao;
+
+if(index < 0){
+index = imagens.length - 1;
+}
+
+if(index >= imagens.length){
+index = 0;
+}
+
+carrossel.style.transform = `translateX(-${index * 100}%)`;
+
+}
+
+
+/* AUTO SLIDE */
+
+setInterval(function(){
+
+window.mover(1);
+
+}, 5000);
+  
 
 /* ANIMAÇÃO DAS SEÇÕES */
 
